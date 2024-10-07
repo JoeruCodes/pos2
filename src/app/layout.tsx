@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Tab from "@/components/Tab";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <main className="min-w-full min-h-full h-screen bg-white text-black flex overflow-scroll">
+        <Tab />
+        <div className="flex-1 flex flex-col">
+          {children}
+        </div>
+      </main>
+      </body>
     </html>
   );
 }
+
